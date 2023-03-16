@@ -1,6 +1,7 @@
 /* Top Navbar CSS Code */
 
 .navbar {
+    display: inline-grid;
     width: 100%;
     background: #313131;
   }
@@ -14,7 +15,13 @@
   }
   
   .navbarSkew{
+    display: inline-flex;
       text-align: center;
+  }
+
+  .navbarSkew button{
+    background-color: transparent;
+    border: 1px solid red;
   }
   
   .navbarSkew ul{
@@ -59,3 +66,20 @@
       transform: skew(25deg);
   }
   
+
+  .searchBarContainer{
+    width: 25%;
+    align-self: center;
+    border: 2px solid blue;
+  }
+
+  .searchSVG{
+    border: 1px solid red;
+    cursor: pointer;
+    width: 20px;
+    filter: invert(97%) sepia(0%) saturate(1824%) hue-rotate(344deg) brightness(102%) contrast(104%);
+  }
+
+  .searchSVG:hover{
+    width: 25px;
+  }
