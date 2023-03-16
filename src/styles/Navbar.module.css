@@ -1,19 +1,23 @@
+/* Top Navbar CSS Code */
+
 .navbar {
     width: 100%;
     background: #313131;
-    border-bottom: 1px solid #414141;
   }
-  
-  .navbar__logo {
+
+.searchButton{
+    background-color: red;
+}
+  .navbarLogo {
     padding: 0.5em;
     float: left;
   }
   
-  .skew-menu{
+  .navbarSkew{
       text-align: center;
   }
   
-  .skew-menu ul{
+  .navbarSkew ul{
       display: inline-block;
       margin: 0;
       padding-top: 0.5em;
@@ -21,7 +25,7 @@
       transform: skew(-25deg);
   }
   
-  .skew-menu ul li{
+  .navbarSkew ul li{
       background: #313131;
       float: left;
       border-left: 1px solid;
@@ -30,27 +34,28 @@
       transition: all 0.1s linear;
   }
   
-  .skew-menu ul li:first-child{
+  .navbarSkew ul li:first-child{
       border-left: none;
   }
   
-  .skew-menu ul li:first-child{
+  .navbarSkew ul li:first-child{
       border-radius: 7px 0 0 7px;
   }
   
-  .skew-menu ul li:last-child{
+  .navbarSkew ul li:last-child{
       border-radius: 0 7px 7px 0;
   }
   
-  .skew-menu ul li:hover{
+  .navbarSkew ul li:hover{
       background: #414141;
       transform: translateY(-5px);
   }
   
-  .skew-menu ul li a{
+  .navbarSkew ul li a{
       display: block;
       padding: 7px 32px;
       color: inherit;
       text-decoration: none;
       transform: skew(25deg);
   }
+  

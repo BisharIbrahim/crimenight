@@ -1,0 +1,55 @@
+
+.sidebar{
+    position: fixed;
+    margin-top: 7em;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #313131;
+}
+
+.sidebarSkew ul{
+    padding-inline-start: 0px;
+}
+
+.sidebarSkew{
+    text-align: left;
+}
+
+.sidebarSkew ul{
+    display: inline-grid;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebarSkew ul li{
+    background: #313131;
+    float: left;
+    color: #eee;
+    border-radius: 10%;
+    font-weight: 900;
+    transition: all 0.1s linear;
+}
+.sidebarSkew button{
+    background: #313131;
+    float: left;
+    color: #eee;
+    border-radius: 10%;
+    font-weight: 900;
+    transition: all 0.1s linear;
+}
+
+
+.sidebarSkew ul li:hover{
+    background: #414141;
+    border-radius: 10%;
+    transform: translateX(10px);
+}
+
+.sidebarSkew ul li a{
+    display: block;
+    padding: 7px 32px;
+    color: inherit;
+    text-decoration: none;
+}
