@@ -5,6 +5,8 @@ import reactLogo from "@assets/react.svg";
 import searchSVG from "@assets/search.svg";
 import { Link } from "react-router-dom";
 import { NavbarToggler, Container } from "reactstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar: React.FC<{}> = () => {
   const [searchBarQuery, setQuery] = useState("");
@@ -26,12 +28,23 @@ const Navbar: React.FC<{}> = () => {
   return (
     <>
       <nav className={styles.navbar}>
-        <nav className={styles.navbarSkew}>
+        <nav className={styles.topBar}>
           {/* Logo */}
           <a href="/"><img src={reactLogo} className={styles.navbarLogo}/></a>
 
           {/* Toggle Sidebar Button */}
-          <button onClick={toggleSidebar} className="me-2" />
+          <button onClick={toggleSidebar} className={styles.sidebarToggle}>
+            <FontAwesomeIcon icon={faBars} className={styles.menuBars}/>
+          </button>
+
+          {/* Searchbar and Search Button */}
+            <div className={styles.searchBarContainer}>
+              <input type="text" className={styles.searchTerm} placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
+              <button onClick={handleSearch} type="submit" className={styles.searchButton}>
+                <FontAwesomeIcon icon={faSearch}/>
+              </button>
+              {/* <img onClick={handleSearch} src={searchSVG} className={styles.searchSVG}/> */}
+            </div>
 
           {/* Navbar Buttons */}
           <ul>
@@ -39,13 +52,6 @@ const Navbar: React.FC<{}> = () => {
             <li><Link to="/DigitalLibrary">Digital Library</Link></li>
             <li><Link to="/Social">Social</Link></li>
           </ul>
-
-          {/* Searchbar and Search Button */}
-          <div className={styles.searchBarContainer}>
-            <input type="text" placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
-            <img onClick={handleSearch} src={searchSVG} className={styles.searchSVG}/>
-          </div>
-
         </nav>
       </nav>
 
