@@ -11,7 +11,7 @@ interface Props{
 function MainLayout({children}: Props){
     return(
         <div className='mainLayout'>
-            <Navbar/>
+            {/* <Navbar/> */}
             <Sidebar/>
             <div>{children}</div>
         </div>

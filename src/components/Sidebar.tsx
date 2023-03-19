@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import reactLogo from "@assets/react.svg";
 
-import "@styles/testStyles.css";
+import "@styles/Sidebar.css";
 import { faStar, faBoxArchive, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
