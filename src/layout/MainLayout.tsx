@@ -12,7 +12,7 @@ function MainLayout({children}: Props){
     return(
         <div className='mainLayout'>
             <Navbar/>
-            
+            <Sidebar/>
             <div>{children}</div>
         </div>
     )

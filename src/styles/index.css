@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -13,15 +13,15 @@ a {
   font-weight: 500;
 }
 
-body {
+/* body {
   margin: 0;
   text-align: center;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
+} */
 
 /* To change between Light and Dark mode in the future */
 
@@ -36,4 +36,4 @@ h1 {
   button {
     background-color: #f9f9f9;
   }
-} */
+} */ 

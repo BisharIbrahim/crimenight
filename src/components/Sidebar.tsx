@@ -1,24 +1,59 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "@styles/Sidebar.module.css";
+import React, { useState } from "react";
+import reactLogo from "@assets/react.svg";
+
+import "@styles/testStyles.css";
+import { faStar, faBoxArchive, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sidebar: React.FC = ({}) => {
+
+  const [isExpanded, setIsExpanded] = useState(true);
+  const menuItems = [
+    {
+      text: "Famous Cases",
+      icon: "src/assets/famous.svg",
+    },
+    {
+      text: "Cases by Category",
+      icon: "src/assets/category.svg",
+    },
+    {
+      text: "Discussion Forum",
+      icon: "src/assets/discussion.svg",
+    },
+    {
+      text: "Gallery",
+      icon: "src/assets/gallery.svg",
+    },
+  ];
+
   return (
-    <nav className={styles["sidebar-container"]}>
-      <nav className={styles["skew-menu"]}>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/DigitalLibrary">Digital Library</Link>
-          </li>
-          <li>
-            <Link to="/Social">Social</Link>
-          </li>
-        </ul>
-      </nav>
-    </nav>
+    <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
+      <div className="nav-upper">
+        <div className="nav-heading">
+          {isExpanded && (<div className="nav-brand">
+            <img src={reactLogo} alt="nav brand"/>
+            <h2>Crime Night</h2>
+          </div>
+          )}
+          <button className={isExpanded? "hamburger hamburger-in" : "hamburger hamburger-out"} 
+            onClick={() => setIsExpanded(!isExpanded)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div className="nav-menu">
+          {menuItems.map(({text, icon}) => (
+             <a href="#" className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}>
+              <img src={icon} alt=""/>
+              {isExpanded && <p>{text}</p>}
+              {!isExpanded && <h6 className="quoteTitle">{text}</h6>}
+             </a>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 

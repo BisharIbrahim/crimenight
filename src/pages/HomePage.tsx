@@ -1,17 +1,20 @@
-import Navbar from "@components/Navbar";
-import Sidebar from "@components/Sidebar";
-import { useState } from "react";
-import { Card, Container, CardBody, CardFooter, CardHeader } from "reactstrap";
+
+import React from "react";
+
 import MainLayout from "../layout/MainLayout";
 
-function HomePage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+import "@styles/Homepage.css";
 
+function HomePage() {
   return (
     <MainLayout>
-      <div>Home page</div>
-      <h1>Welcome to My Site!</h1>
-      <button>Search</button>
+      <div className="mainDiv">
+        <div className="headers">
+          <h1>Home page</h1>
+          <h1>Welcome to My Site!</h1>
+          <button>Search</button>
+        </div>
+      </div>
     </MainLayout>
   );
 }

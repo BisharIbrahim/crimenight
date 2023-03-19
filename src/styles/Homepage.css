@@ -1,0 +1,14 @@
+.mainDiv{
+    background-color: #313131;
+}
+
+.headers{
+    text-align: center;
+}
+.headers h1{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
