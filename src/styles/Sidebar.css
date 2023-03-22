@@ -53,8 +53,8 @@
     border: 2px solid rgb(17, 16, 26);
     cursor: pointer;
 
-    margin: auto -35px;
-    background-color: #4b4f80;
+    margin: -35px -35px;
+    background-color: #1f1f1f;
     padding-left: 17.5px;
     padding-bottom: 5px;
     border-radius: 90px;
@@ -65,7 +65,7 @@
 .hamburger span {
 	display: block;
 	margin-top: 5px;
-	background-color: yellow;
+	background-color: white;
 	border-radius: 15px;
 	height: 5px;
 	width: 35px;
@@ -77,7 +77,7 @@
 
 
 .hamburger:hover span {
-	background-color: yellow;
+	background-color: rgb(179, 0, 0);
 }
 
 .hamburger-in:hover span:nth-child(1) {

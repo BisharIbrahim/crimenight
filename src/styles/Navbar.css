@@ -8,7 +8,7 @@
     align-items: center;
 }
     
-.searchBarContainer{
+.topNavContainer{
     height: 6vh;
     place-content: center;
     display: flex;
@@ -16,6 +16,7 @@
 }
   
 .searchTerm{
+    
     border: 1px solid #FFFFFF;
     background-color: #1f1f1f;
     border-right: none;
@@ -25,6 +26,14 @@
     height: 45px;
     width: 450px;
 }
+
+.searchTerm::placeholder{
+    padding-left: 10px;
+    font-size: 19px;
+    opacity: 0.5;
+    color: white;
+}
+
 .searchIcon{
     margin-top: 5px;
     height: 20px;
@@ -55,7 +64,7 @@
         border-radius: 20px 20px 20px 20px;
     }
     
-    .searchBarContainer{
+    .topNavContainer{
         float: right;
         margin-right: 20px;
         height: 6vh;

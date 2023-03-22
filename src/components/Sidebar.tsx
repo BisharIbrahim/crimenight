@@ -41,7 +41,7 @@ const Sidebar: React.FC = ({}) => {
     <>
     <div className="topNav">
       {/* Searchbar and Search Button */}
-      <div className={"searchBarContainer"}>
+      <div className={"topNavContainer"}>
         <input type="text" className={"searchTerm"} placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
         <button onClick={handleSearch} type="submit" className={"searchButton"}>
           <FontAwesomeIcon className="searchIcon" icon={faSearch}/>
