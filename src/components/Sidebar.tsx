@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import reactLogo from "@assets/react.svg";
-
+import "@styles/Navbar.css"
 import "@styles/Sidebar.css";
-import { faStar, faBoxArchive, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const Sidebar: React.FC = ({}) => {
 
+  const [searchBarQuery, setQuery] = useState("");
   const [isExpanded, setIsExpanded] = useState(true);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSearch = () => {
+    console.log(`Search for "${searchBarQuery}"`); //Delete this
+  };
+
   const menuItems = [
     {
       text: "Famous Cases",
@@ -28,7 +38,17 @@ const Sidebar: React.FC = ({}) => {
   ];
 
   return (
-    <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
+    <>
+    <div className="topNav">
+      {/* Searchbar and Search Button */}
+      <div className={"searchBarContainer"}>
+        <input type="text" className={"searchTerm"} placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
+        <button onClick={handleSearch} type="submit" className={"searchButton"}>
+          <FontAwesomeIcon className="searchIcon" icon={faSearch}/>
+        </button>
+      </div>
+    </div>
+     <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
       <div className="nav-upper">
         <div className="nav-heading">
           {isExpanded && (<div className="nav-brand">
@@ -54,6 +74,7 @@ const Sidebar: React.FC = ({}) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
