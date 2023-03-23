@@ -10,7 +10,13 @@ function HomePage() {
     <MainLayout>
       <div className="mainDiv">
         <div className="headers">
-          <h1>Home page</h1>
+          <div>
+            <h2>Featured Videos</h2>
+            <span></span>
+            <div>
+              {/* Insert video list here */}
+            </div>
+          </div>
           <h1>Welcome to My Site!</h1>
           <button>Search</button>
         </div>

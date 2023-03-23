@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '@components/Navbar'
 import Sidebar from '@components/Sidebar';
-// import styles from '@styles/MainLayout.css'
+import '@styles/MainLayout.css'
 
 
 interface Props{
@@ -11,7 +11,6 @@ interface Props{
 function MainLayout({children}: Props){
     return(
         <div className='mainLayout'>
-            {/* <Navbar/> */}
             <Sidebar/>
             <div>{children}</div>
         </div>
