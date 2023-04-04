@@ -1,17 +1,16 @@
 import React, { useState } from "react";
-import styles from "@styles/Navbar.module.css";
 import reactLogo from "@assets/react.svg";
+import "@styles/Navbar.css"
+import "@styles/Sidebar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
 
-const Navbar: React.FC<{}> = () => {
-  
-
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen (!isOpen);
+const Navbar: React.FC = ({}) => {
 
   const [searchBarQuery, setQuery] = useState("");
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
   };
@@ -20,35 +19,73 @@ const Navbar: React.FC<{}> = () => {
     console.log(`Search for "${searchBarQuery}"`); //Delete this
   };
 
+  const menuItems = [
+    {
+      text: "Famous Cases",
+      icon: "src/assets/famous.svg",
+    },
+    {
+      text: "Cases by Category",
+      icon: "src/assets/category.svg",
+    },
+    {
+      text: "Discussion Forum",
+      icon: "src/assets/discussion.svg",
+    },
+    {
+      text: "Gallery",
+      icon: "src/assets/gallery.svg",
+    },
+  ];
+
   return (
     <>
-      <nav className={styles.navbar}>
-        <nav className={styles.topBar}>
-          {/* Logo */}
-          <a href="/"><img src={reactLogo} className={styles.navbarLogo}/></a>
+    <div className="topNav">
+      {/* Logo */}
+      <a href="/"><img src={reactLogo} className={"navbarLogo"}/></a>
+      {/* Searchbar and Search Button */}
+      <div className={"topNavContainer"}>
+        <input type="text" className={"searchTerm"} placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
+        <button onClick={handleSearch} type="submit" className={"searchButton"}>
+          <FontAwesomeIcon className="searchIcon" icon={faSearch}/>
+        </button>
 
-          {/* Toggle Sidebar Button */}
-          <button onClick={toggle} className={styles.sidebarToggle}>
-            <FontAwesomeIcon icon={faBars} className={styles.menuBars}/>
-          </button>
-
-          {/* Searchbar and Search Button */}
-            <div className={styles.searchBarContainer}>
-              <input type="text" className={styles.searchTerm} placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
-              <button onClick={handleSearch} type="submit" className={styles.searchButton}>
-                <FontAwesomeIcon icon={faSearch}/>
-              </button>
-              {/* <img onClick={handleSearch} src={searchSVG} className={styles.searchSVG}/> */}
-            </div>
-
-          {/* Navbar Buttons */}
+        <div className="topBar">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/DigitalLibrary">Digital Library</Link></li>
             <li><Link to="/Social">Social</Link></li>
           </ul>
-        </nav>
-      </nav>
+      </div>
+      </div>
+
+    </div>
+     <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
+      <div className="nav-upper">
+        <div className="nav-heading">
+          {isExpanded && (<div className="nav-brand">
+            <img src={reactLogo} alt="nav brand"/>
+            <h2>Crime Night</h2>
+          </div>
+          )}
+          <button className={isExpanded? "hamburger hamburger-in" : "hamburger hamburger-out"} 
+            onClick={() => setIsExpanded(!isExpanded)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div className="nav-menu">
+          {menuItems.map(({text, icon}) => (
+             <a href="#" className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}>
+              <img src={icon} alt=""/>
+              {isExpanded && <p>{text}</p>}
+              {!isExpanded && <h6 className="quoteTitle">{text}</h6>}
+             </a>
+          ))}
+        </div>
+      </div>
+    </div>
     </>
   );
 };

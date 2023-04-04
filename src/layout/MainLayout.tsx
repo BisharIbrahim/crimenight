@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '@components/Navbar'
-import Sidebar from '@components/Sidebar';
 import '@styles/MainLayout.css'
 
 
@@ -11,7 +10,7 @@ interface Props{
 function MainLayout({children}: Props){
     return(
         <div className='mainLayout'>
-            <Sidebar/>
+            <Navbar/>
             <div>{children}</div>
         </div>
     )

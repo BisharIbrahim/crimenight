@@ -180,6 +180,15 @@
 }
 
 
+@media only screen and (max-height: 1000px){
+
+    .side-nav-container {
+        margin-top: 55px;
+    }
+
+}
+
+
 
 
 

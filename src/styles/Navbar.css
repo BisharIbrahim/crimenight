@@ -1,12 +1,17 @@
 /* Top Navbar CSS Code */
 
 .topNav{
+    display: flex;
     background-color: #2d2d30;
     width: 100%;
     height: 6vh;
     position: fixed;
     align-items: center;
+    padding: 0.5em;
+    place-content: center;
+    
 }
+
     
 .topNavContainer{
     height: 6vh;
@@ -46,8 +51,47 @@
     background-color: #131313;
     text-align: center;
     border-radius: 0px 20px 20px 0px;
+}
+
+.topBar ul{
+    list-style: none;
+    transform: skew(-25deg);
   }
-  
+    
+  .topBar ul li{
+    float: left;
+    border-left: 1px solid;
+    color: #eee;
+    font-size: 20px;
+    font-weight: 500;
+    transition: all 0.1s linear;
+  }
+    
+  .topBar ul li:first-child{
+    border-left: none;
+  }
+    
+  .topBar ul li:first-child{
+    border-radius: 7px 0 0 7px;
+  }
+    
+  .topBar ul li:last-child{
+    border-radius: 0 7px 7px 0;
+  }
+    
+  .topBar ul li:hover{
+    background: #414141;
+    transform: translateY(-5px);
+  }
+    
+  .topBar ul li a{
+    display: block;
+    padding: 7px 32px;
+    color: inherit;
+    text-decoration: none;
+    transform: skew(25deg);
+  }
+
   /* For Tablets and mobile devices */
 @media only screen and (max-width: 768px) {
   
