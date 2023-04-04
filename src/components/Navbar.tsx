@@ -1,92 +1,48 @@
 import React, { useState } from "react";
 import reactLogo from "@assets/react.svg";
 import "@styles/Navbar.css"
-import "@styles/Sidebar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
 
 const Navbar: React.FC = ({}) => {
 
-  const [searchBarQuery, setQuery] = useState("");
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
+    setSearchQuery(event.target.value);
   };
 
   const handleSearch = () => {
-    console.log(`Search for "${searchBarQuery}"`); //Delete this
+    console.log(`Search for "${searchQuery}"`); //Delete this
   };
 
-  const menuItems = [
-    {
-      text: "Famous Cases",
-      icon: "src/assets/famous.svg",
-    },
-    {
-      text: "Cases by Category",
-      icon: "src/assets/category.svg",
-    },
-    {
-      text: "Discussion Forum",
-      icon: "src/assets/discussion.svg",
-    },
-    {
-      text: "Gallery",
-      icon: "src/assets/gallery.svg",
-    },
-  ];
-
   return (
-    <>
-    <div className="topNav">
-      {/* Logo */}
-      <a href="/"><img src={reactLogo} className={"navbarLogo"}/></a>
-      {/* Searchbar and Search Button */}
-      <div className={"topNavContainer"}>
-        <input type="text" className={"searchTerm"} placeholder="Search" value={searchBarQuery} onChange={handleInputChange}/>
-        <button onClick={handleSearch} type="submit" className={"searchButton"}>
-          <FontAwesomeIcon className="searchIcon" icon={faSearch}/>
-        </button>
 
-        <div className="topBar">
+    <div className="Navbar__Container">
+      {/* Logo Section -- LEFT */}
+      <a href="/" className={"Navbar__Logo"}><img src={reactLogo}/></a>
+
+      {/* Search Section -- MIDDLE */}
+      <input type="text" className={"Navbar__Search"} placeholder="Search" value={searchQuery} onChange={handleInputChange}/>
+      <button onClick={handleSearch} type="submit" className={"Navbar__Search__Button"}>
+        <FontAwesomeIcon className="Navbar__Search__Icon" icon={faSearch}/>
+      </button>
+
+      {/* Account Section -- RIGHT */}
+      <div className={"Navbar__Acount"}>
+        <a href="/" className={"Navbar__Account__Icon"}><img src={reactLogo}/></a>
+      </div>
+
+        {/* <div className="Navbar__Links">
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/DigitalLibrary">Digital Library</Link></li>
             <li><Link to="/Social">Social</Link></li>
           </ul>
-      </div>
-      </div>
+        </div> */}
+    </div>
 
-    </div>
-     <div className={isExpanded ? "side-nav-container" : "side-nav-container side-nav-container-NX"}>
-      <div className="nav-upper">
-        <div className="nav-heading">
-          {isExpanded && (<div className="nav-brand">
-            <img src={reactLogo} alt="nav brand"/>
-            <h2>Crime Night</h2>
-          </div>
-          )}
-          <button className={isExpanded? "hamburger hamburger-in" : "hamburger hamburger-out"} 
-            onClick={() => setIsExpanded(!isExpanded)}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-        <div className="nav-menu">
-          {menuItems.map(({text, icon}) => (
-             <a href="#" className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}>
-              <img src={icon} alt=""/>
-              {isExpanded && <p>{text}</p>}
-              {!isExpanded && <h6 className="quoteTitle">{text}</h6>}
-             </a>
-          ))}
-        </div>
-      </div>
-    </div>
-    </>
   );
 };
 

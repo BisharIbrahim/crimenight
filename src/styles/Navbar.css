@@ -1,117 +1,101 @@
 /* Top Navbar CSS Code */
 
-.topNav{
-    display: flex;
-    background-color: #2d2d30;
-    width: 100%;
-    height: 6vh;
-    position: fixed;
-    align-items: center;
-    padding: 0.5em;
-    place-content: center;
-    
+.Navbar__Container{
+  display: flex;
+  background-color: #2d2d30;
+  width: 100%;
+  height: 6vh;
+  position: fixed;
+  align-items: center;
+  place-content: center;
 }
 
-    
-.topNavContainer{
-    height: 6vh;
-    place-content: center;
-    display: flex;
-    align-items: center;
+.Navbar__Logo{
+  margin-right: auto;
+  padding-left: 10px;
+}
+
+.Navbar__Search{
+  border: 1px solid #FFFFFF;
+  background-color: #1f1f1f;
+  border-right: none;
+  border-radius: 20px 0px 0px 20px;
+  outline: none;
+  color: #0a7c82;
+  height: 40px;
+  width: 450px;
+}
+
+.Navbar__Search::placeholder{
+  padding-left: 10px;
+  font-size: 19px;
+  opacity: 0.5;
+  color: white;
+}
+
+.Navbar__Search__Button{
+  width: 60px;
+  height: 40px;
+  border: 1px solid #FFFFFF;
+  background-color: #131313;
+  text-align: center;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.Navbar__Search__Icon{
+  margin-top: 5px;
+  height: 20px;
+  color: white;
+}
+
+.Navbar__Acount{
+  margin-left: auto;
+}
+
+.Navbar__Links ul{
+  list-style: none;
+  transform: skew(-25deg);
 }
   
-.searchTerm{
-    
-    border: 1px solid #FFFFFF;
-    background-color: #1f1f1f;
-    border-right: none;
-    border-radius: 20px 0px 0px 20px;
-    outline: none;
-    color: #0a7c82;
-    height: 45px;
-    width: 450px;
+.Navbar__Links ul li{
+  float: left;
+  border-left: 1px solid;
+  color: #eee;
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.1s linear;
+}
+  
+.Navbar__Links ul li:first-child{
+  border-left: none;
+}
+  
+.Navbar__Links ul li:first-child{
+  border-radius: 7px 0 0 7px;
+}
+  
+.Navbar__Links ul li:last-child{
+  border-radius: 0 7px 7px 0;
+}
+  
+.Navbar__Links ul li:hover{
+  background: #414141;
+  transform: translateY(-5px);
 }
 
-.searchTerm::placeholder{
-    padding-left: 10px;
-    font-size: 19px;
-    opacity: 0.5;
-    color: white;
+.Navbar__Links ul li a{
+  display: block;
+  padding: 7px 32px;
+  color: inherit;
+  text-decoration: none;
+  transform: skew(25deg);
 }
 
-.searchIcon{
-    margin-top: 5px;
-    height: 20px;
-    color: white;
-}
-.searchButton{
-    width: 70px;
-    height: 45px;
-    border: 1px solid #FFFFFF;
-    background-color: #131313;
-    text-align: center;
-    border-radius: 0px 20px 20px 0px;
-}
-
-.topBar ul{
-    list-style: none;
-    transform: skew(-25deg);
-  }
-    
-  .topBar ul li{
-    float: left;
-    border-left: 1px solid;
-    color: #eee;
-    font-size: 20px;
-    font-weight: 500;
-    transition: all 0.1s linear;
-  }
-    
-  .topBar ul li:first-child{
-    border-left: none;
-  }
-    
-  .topBar ul li:first-child{
-    border-radius: 7px 0 0 7px;
-  }
-    
-  .topBar ul li:last-child{
-    border-radius: 0 7px 7px 0;
-  }
-    
-  .topBar ul li:hover{
-    background: #414141;
-    transform: translateY(-5px);
-  }
-    
-  .topBar ul li a{
-    display: block;
-    padding: 7px 32px;
-    color: inherit;
-    text-decoration: none;
-    transform: skew(25deg);
-  }
-
-  /* For Tablets and mobile devices */
+/* For Tablets and mobile devices */
 @media only screen and (max-width: 768px) {
+
+  .Navbar__Search{
+    width: auto;
+  }
   
-    .searchTerm{
-      display: none;
-    }
-  
-    .searchButton{
-        width: 60px;
-        height: 45px;
-        border: 1px solid #FFFFFF;
-        background-color: #131313;
-        text-align: center;
-        border-radius: 20px 20px 20px 20px;
-    }
-    
-    .topNavContainer{
-        float: right;
-        margin-right: 20px;
-        height: 6vh;
-        display: flex;
-    }
 }
